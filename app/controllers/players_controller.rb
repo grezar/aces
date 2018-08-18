@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
 
     if @player.save
       respond_to do |format|
-        format.html { redirect_to @player, notice: 'Player was successfully created.' }
+        format.html { redirect_to players_url, notice: 'Player was successfully created.' }
       end
     else
       format.html { render :new }
@@ -31,7 +31,7 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to @player, notice: 'Player was successfully updated.' }
+        format.html { redirect_to players_url, notice: 'Player was successfully updated.' }
       end
     end
   end
