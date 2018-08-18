@@ -1,10 +1,9 @@
 h1 Players
 = link_to 'New', new_player_path
 
-dl
+table
   - @players.each do |player|
-    dt = player.name
-    dd
-      = link_to 'Edit', edit_player_path(player)
-    dd
-      = link_to 'Destroy', player_path(player), method: :delete, data: { confirm: 'Are you sure?' }
+    tr
+      th = player.name
+      td = link_to 'Edit', edit_player_path(player)
+      td = link_to 'Destroy', player_path(player), method: :delete, data: { confirm: 'Are you sure?' }
