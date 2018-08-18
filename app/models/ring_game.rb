@@ -1,0 +1,2 @@
+class RingGame < ApplicationRecord
+end
