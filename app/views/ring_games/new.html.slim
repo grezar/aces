@@ -1,0 +1,14 @@
+h1 RingGame
+
+= form_with(model: @ring_game) do |f|
+  = f.label :blind
+  = f.text_field :blind
+  = f.label :starting_stack
+  = f.text_field :starting_stack
+  = f.collection_check_boxes(:player_ids, @players, :id, :name, local: true) do |p|
+    = p.label do
+      div
+        = p.check_box
+        = p.text
+
+  = f.submit 'Start'
