@@ -1,0 +1,2 @@
+class ChipChange < ApplicationRecord
+end
