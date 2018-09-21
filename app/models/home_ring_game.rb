@@ -1,0 +1,2 @@
+class HomeRingGame < ApplicationRecord
+end
