@@ -1,0 +1,2 @@
+class PlayerChip < ApplicationRecord
+end
