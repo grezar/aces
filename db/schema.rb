@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_105253) do
+ActiveRecord::Schema.define(version: 2018_09_21_112321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chip_changes", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "ring_game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "chips", force: :cascade do |t|
+    t.integer "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "home_owners", force: :cascade do |t|
     t.integer "home_id"
@@ -29,8 +42,22 @@ ActiveRecord::Schema.define(version: 2018_09_21_105253) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "home_ring_games", force: :cascade do |t|
+    t.integer "home_id"
+    t.integer "ring_game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "homes", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "player_chips", force: :cascade do |t|
+    t.integer "player_id"
+    t.integer "chip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
