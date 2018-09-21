@@ -1,0 +1,2 @@
+class HomePlayer < ApplicationRecord
+end
