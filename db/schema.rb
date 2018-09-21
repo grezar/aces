@@ -22,10 +22,12 @@ ActiveRecord::Schema.define(version: 2018_08_19_092424) do
   end
 
   create_table "ring_game_players", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "ring_game_id"
+    t.bigint "player_id_id"
+    t.bigint "ring_game_id_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["player_id_id"], name: "index_ring_game_players_on_player_id_id"
+    t.index ["ring_game_id_id"], name: "index_ring_game_players_on_ring_game_id_id"
   end
 
   create_table "ring_games", force: :cascade do |t|
